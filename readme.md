@@ -49,13 +49,59 @@ By the end of this project, you should be able to:
 
 ### 1. Setup
 
-#### 1.1. Install Git
+#### 1.1. Install Git (Windows Users Only)
 
 - [Download Git](https://git-scm.com/downloads)
 
 #### 1.2. Install Dart
 
-- [Download Dart (And flutter)](https://docs.flutter.dev/get-started/install)
+##### 1.2.1. Windows (Using Chocolaty)
+
+- Open powershell as an administrator.
+- Run the following command to install Chocolaty:
+
+```bash
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+- Run the following command to install Flutter:
+
+```bash
+choco install flutter
+```
+
+##### 1.2.2. MacOS (Using Homebrew)
+
+- Open the terminal.
+- Run the following command to install Homebrew:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+- Run the following command to install Flutter:
+
+```bash
+brew install flutter
+```
+
+![Alt text](/readme/image4.png)
+
+- Run Flutter Doctor to check if Flutter is installed properly:
+
+```bash
+flutter doctor
+```
+
+![Alt text](/readme/image5.png)
+
+- if you see any errors, run the following command to install Xcode command line tools:
+
+```bash
+xcode-select --install
+```
+
+- Any other errors can be fixed by following the instructions provided by Flutter Doctor.
 
 #### 1.3. Install VS Code
 
@@ -65,6 +111,8 @@ By the end of this project, you should be able to:
 
 - Fork the repository by clicking the fork button on the top right corner of the repository page.
 
+![Image of forking the repository](./readme/image.png)
+
 ### Tutorial
 
 #### 2.1. Git
@@ -72,13 +120,17 @@ By the end of this project, you should be able to:
 ##### 2.1.1. Clone the repository
 
 - Open the terminal and navigate to the directory where you want to clone the repository.
-- Go to the repository page and click on the green code button.
+- Go to the repository page on your own account and click on the green code button.
 - Copy the link under the clone section.
 - Run the following command to clone the repository:
+
+![Image of github](/readme/image1.png)
 
 ```bash
 git clone <repository-url>
 ```
+
+![Alt text](./readme/image3.png)
 
 ##### 2.1.2. Add changes
 
@@ -103,17 +155,25 @@ git commit -m "<commit-message>"
 - Run the following command to push the changes:
 
 ```bash
-git push origin <branch-name>
+git push
 ```
+
+![Alt text](/readme/image6.png)
 
 ##### 2.1.5. Create a pull request
 
 - Go to the repository page and click on the pull request button.
+![Alt text](/readme/image7.png)
 - Click on the new pull request button.
+![Alt text](/readme/image8.png)
 - Select the branch you want to merge into the main branch.
+![Alt text](/readme/image9.png)
 - Click on the create pull request button.
+![Alt text](/readme/image10.png)
 - Add a title and description for the pull request. Title should be in the following format: `<your-name> - <project-name>`.
+![Alt text](/readme/image11.png)
 - Click on the create pull request button.
+![Alt text](/readme/image12.png)
 
 #### 2.2. Dart
 
