@@ -166,8 +166,15 @@ flutter doctor
 #### 1.4 Fork the repository
 
 - Fork the repository by clicking the fork button on the top right corner of the repository page.
+  - Click the fork Button
 
-![Image of forking the repository](./readme/image.png)
+  ![Image of forking the repository](./readme/image.png)
+
+  - Name the repo and click "Create fork"
+  ![Alt text](/readme/image25.png)
+
+  - You should now have a copy of the repository on your own account.
+  ![Alt text](/readme/image26.png)
 
 ### Tutorial
 
