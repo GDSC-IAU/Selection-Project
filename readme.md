@@ -214,7 +214,7 @@ git clone https://github.com/YOUR_NAME/Selection-Project.git
   ![Alt text](/readme/image22.png)
   - The repository should be opened in VS Code.
   ![Alt text](/readme/image18.png)
-  - To make sure, run the following command in the terminal:
+  - To make sure, run the following command in the terminal INSIDE Vscode:
 
   ```bash
   git status
