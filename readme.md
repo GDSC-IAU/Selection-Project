@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Selection Project: Note Taking app](#selection-project-note-taking-app)
+- [Selection Project: Note Taking App](#selection-project-note-taking-app)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Learning Objectives](#learning-objectives)
