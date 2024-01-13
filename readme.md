@@ -1,5 +1,39 @@
 # Selection Project: Note Taking App
 
+## Table of Contents
+
+- [Selection Project: Note Taking app](#selection-project-note-taking-app)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Learning Objectives](#learning-objectives)
+  - [Resources](#resources)
+    - [Online Resources](#online-resources)
+      - [Github](#github)
+      - [Dart](#dart)
+    - [Custom Resources](#custom-resources)
+  - [Setup and Tutorial](#setup-and-tutorial)
+    - [1. Setup](#1-setup)
+      - [1.1. Install Git (Windows Users Only)](#11-install-git-windows-users-only)
+      - [1.2. Install Dart](#12-install-dart)
+        - [1.2.1. Windows (Using Chocolaty)](#121-windows-using-chocolaty)
+      - [Windows: The following is a checklist of everything you need to have done before continuing with the project 👍🏽🫡](#windows-the-following-is-a-checklist-of-everything-you-need-to-have-done-before-continuing-with-the-project-)
+        - [1.2.2. MacOS (Using Homebrew)](#122-macos-using-homebrew)
+      - [MacOS: The following is a checklist of everything you need to have done before continuing with the project 👍🏽🫡](#macos-the-following-is-a-checklist-of-everything-you-need-to-have-done-before-continuing-with-the-project-)
+        - [2.1.2. Add changes](#212-add-changes)
+      - [You are now ready to code! Make the required changes which are given in section Project Overview and then follow the steps below to push your changes to Github. Make sure to regularly commit your changes. If you want to continue the tutorial, skip to section 2.2. Dart](#you-are-now-ready-to-code-make-the-required-changes-which-are-given-in-section-project-overview-and-then-follow-the-steps-below-to-push-your-changes-to-github-make-sure-to-regularly-commit-your-changes-if-you-want-to-continue-the-tutorial-skip-to-section-22-dart)
+        - [2.1.3. Commit changes](#213-commit-changes)
+        - [2.1.4. Push changes](#214-push-changes)
+        - [2.1.5. Create a pull request](#215-create-a-pull-request)
+      - [2.2. Dart](#22-dart)
+        - [2.2.1. Variables](#221-variables)
+        - [2.2.2. Data Types](#222-data-types)
+        - [2.2.3. Error Handling](#223-error-handling)
+        - [2.2.4. Classes](#224-classes)
+        - [2.2.5. Null Safety](#225-null-safety)
+        - [2.2.6. Code Structuring and Formatting](#226-code-structuring-and-formatting)
+  - [Project Overview](#project-overview)
+    - [Requirements and submission guidelines](#requirements-and-submission-guidelines)
+
 ## Overview
 
 In this project, you will be building a note taking app. The app will allow users to create, edit and delete notes. The app will also allow users to search for notes by title and content.
@@ -178,6 +212,11 @@ git clone https://github.com/YOUR_NAME/Selection-Project.git
 
 - Open the repository directory in VS Code.
   - The path must be INSIDE the cloned repository.
+  - Click on File -> Open folder
+  ![Alt text](/readme/image21.png)
+  - Select the repository folder.
+  ![Alt text](/readme/image22.png)
+  - The repository should be opened in VS Code.
   ![Alt text](/readme/image18.png)
   - To make sure, run the following command in the terminal:
 
@@ -187,7 +226,13 @@ git clone https://github.com/YOUR_NAME/Selection-Project.git
 
   - The output should be similar to the following:
   ![Alt text](/readme/image19.png)
-- Make the required changes.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#### You are now ready to code! Make the required changes which are given in section [Project Overview](#project-overview) and then follow the steps below to push your changes to Github. Make sure to regularly commit your changes. If you want to continue the tutorial, skip to section [2.2. Dart](#22-dart)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 - Run the following command to add the changes:
 
 ```bash
@@ -355,7 +400,7 @@ An example code structure is provided within the repository itself.
 
 Your project is to build a note taking app. The app should allow users to create, edit and delete notes. The app should also allow users to search for notes by title and content.
 
-### Requirements
+### Requirements and submission guidelines
 
 - The CLI (Command line interface) should display a menu with the following options:
   - Create a note
