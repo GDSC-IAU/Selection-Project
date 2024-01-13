@@ -131,7 +131,6 @@ flutter doctor
   ```bash
   sudo xcodebuild -license
 
-
 #### 1.3. Install VS Code
 
 - [Download VS Code](https://code.visualstudio.com/download)
