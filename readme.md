@@ -164,7 +164,9 @@ flutter doctor
 
 - Open the terminal and navigate to the directory where you want to clone the repository.
   - Make sure the path you choose has NO ARABIC LETTERS. This will cause errors.
+    - On Mac:
   ![Alt text](/readme/image17.png)
+    - On Windows:
   ![Alt text](/readme/image20.png)
 - Go to the repository page on **your own account** and click on the green code button.
 - Copy the link under the clone section.
