@@ -2,7 +2,7 @@
 <img width="1200" src="https://github.com/GDSC-IAU/Selection-Project/blob/master/readme/banner.jpg" alt="Material Bread logo">
 </p>
 
-<h1 align="left">Selection Project: Note Taking App</h1>
+<h1 align="center">Selection Project: Note Taking App</h1>
 
 ## Table of Contents
 
