@@ -383,7 +383,6 @@ if (name == null) {
 }
 ```
 
-
 ##### 2.2.6. Finding an Element in a List
 
 - To find an element in a list, use the `firstWhere()` method.
@@ -410,7 +409,6 @@ print(result);
 - The above code will print `0` instead of throwing an error.
 - The `orElse()` method takes a function as an argument.
 - The function should return a value if the element is not found.
-
 
 ##### 2.2.6. Code Structuring and Formatting
 
