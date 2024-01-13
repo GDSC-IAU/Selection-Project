@@ -175,7 +175,7 @@ flutter doctor
 
 ##### 2.1.1. Clone the repository
 
-- Open the terminal and navigate to the directory where you want to clone the repository.
+- Open the terminal and navigate to the directory (also known as folder) where you want to clone the repository.
   - Make sure the path you choose has NO ARABIC LETTERS. This will cause errors.
     - On Mac:
   ![Alt text](/readme/image17.png)
