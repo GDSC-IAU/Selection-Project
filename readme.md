@@ -190,7 +190,7 @@ flutter doctor
 - Go to the repository page on **your own account** and click on the green code button.
 - Copy the link under the clone section.
 ![Image of github](/readme/image1.png)
-- Run the following command to clone the repository:
+- Run the following command inside of the opened terminal to clone the repository:
 
 ```bash
 git clone <The Link from your Repository>
