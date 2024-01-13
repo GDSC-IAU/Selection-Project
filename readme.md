@@ -103,6 +103,7 @@ flutter doctor
 - [ ] Visual Studio Desktop development with C++ installed
   - You can Install it by following these steps:
     - Install Visual Studio from the following link: [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+    - Select Visual Studio Community Edition
     - When running the installer, make select the Desktop development with C++ Component
 - [ ] Android emulator installed
   - Go to android studio and click on the AVD manager button.
