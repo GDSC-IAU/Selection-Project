@@ -156,13 +156,20 @@ flutter doctor
 - Open the terminal and navigate to the directory where you want to clone the repository.
   - Make sure the path you choose has NO ARABIC LETTERS. This will cause errors.
   ![Alt text](/readme/image17.png)
+  ![Alt text](/readme/image20.png)
 - Go to the repository page on **your own account** and click on the green code button.
 - Copy the link under the clone section.
 ![Image of github](/readme/image1.png)
 - Run the following command to clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone <The Link from your Repository>
+```
+
+Example:
+
+```bash
+git clone https://github.com/YOUR_NAME/Selection-Project.git
 ```
 
 ![Alt text](./readme/image3.png)
