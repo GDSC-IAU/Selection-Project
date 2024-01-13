@@ -73,15 +73,16 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco install flutter
 ```
 
-- Make sure you have the following:
-  - Flutter installed
-  - Android Studio installed
-    - Go to the [android studio](https://developer.android.com/studio) website and download the latest version.
-  - Android SDK installed (Steps shown below)
+#### Windows: The following is a checklist of everything you need to have done before continuing with the project 👍🏽🫡
+
+- [ ] Flutter installed
+- [ ] Android Studio installed
+  - Go to the [android studio](https://developer.android.com/studio) website and download the latest version.
+- [ ] Android SDK installed (Steps shown below)
 ![Alt text](/readme/image13.png)
 ![Alt text](/readme/image14.png)
-  - Visual Studio Desktop development with C++ installed
-  - Android emulator installed
+- [ ] Visual Studio Desktop development with C++ installed
+- [ ] Android emulator installed
 
 ##### 1.2.2. MacOS (Using Homebrew)
 
@@ -109,28 +110,29 @@ flutter doctor
 
 ![Alt text](/readme/image5.png)
 
-- You must make sure you have the following:
-  - Flutter installed
-  - Android Studio installed
-    - Go to the [android studio](https://developer.android.com/studio) website and download the latest version.
-  - Xcode installed
-    - Go to the [app store](https://apps.apple.com/us/app/xcode/id497799835?mt=12) and download Xcode.
-  - Android SDK installed
+#### MacOS: The following is a checklist of everything you need to have done before continuing with the project 👍🏽🫡
+
+- [ ] Flutter installed
+- [ ] Android Studio installed
+  - [ ] Go to the [android studio](https://developer.android.com/studio) website and download the latest version.
+- [ ] Xcode installed
+  - Go to the [app store](https://apps.apple.com/us/app/xcode/id497799835?mt=12) and download Xcode.
+- [ ] Android SDK installed
 ![Alt text](/readme/image13.png)
 ![Alt text](/readme/image14.png)
-  - Xcode command line tools installed
+- [ ] Xcode command line tools installed
 
   ```bash
   sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
   ```
 
-  - iOS simulator installed
+- [ ] iOS simulator installed
 
   ```bash
   xcodebuild -downloadPlatform iOS
   ```
 
-  - xcode license accepted
+- [ ] xcode license accepted
 
   ```bash
   sudo xcodebuild -license
@@ -353,4 +355,4 @@ Your project is to build a note taking app. The app should allow users to create
 - The pull request title should be in the following format: `<your-name> - <project-name>`.
 - The pull request description should contain the following:
   - A description of the changes made.
-  - A screenshot of the app running in the terminal
+  - A screenshot of the app running in the terminal.
