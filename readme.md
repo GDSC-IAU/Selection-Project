@@ -1,4 +1,4 @@
-# Selection Project: Note Taking app
+# Selection Project: Note Taking App
 
 ## Overview
 
