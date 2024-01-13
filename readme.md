@@ -140,18 +140,21 @@ flutter doctor
 ![Alt text](/readme/image13.png)
 ![Alt text](/readme/image14.png)
 - [ ] Xcode command line tools installed
+  - Run the following command in the terminal
 
   ```bash
   sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
   ```
 
 - [ ] iOS simulator installed
+  - Run the following command in the terminal
 
   ```bash
   xcodebuild -downloadPlatform iOS
   ```
 
 - [ ] xcode license accepted
+  - Run the following command in the terminal
 
   ```bash
   sudo xcodebuild -license
