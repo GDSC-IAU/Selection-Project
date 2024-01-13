@@ -383,6 +383,35 @@ if (name == null) {
 }
 ```
 
+
+##### 2.2.6. Finding an Element in a List
+
+- To find an element in a list, use the `firstWhere()` method.
+- The list can be a list of a predefined data type or a list of a custom class.
+- The `firstWhere()` method takes a function as an argument.
+- The function should return true if the element is found and false if the element is not found.
+
+```dart
+List<int> numbers = [1, 2, 3, 4, 5];
+result = numbers.firstWhere((element) => element == 3);
+print(result);
+```
+
+- The above code will print `3`.
+- If the element is not found, the `firstWhere()` method will throw an error.
+- To avoid the error, use the `orElse()` method.
+
+```dart
+List<int> numbers = [1, 2, 3, 4, 5];
+result = numbers.firstWhere((element) => element == 6, orElse: () => 0);
+print(result);
+```
+
+- The above code will print `0` instead of throwing an error.
+- The `orElse()` method takes a function as an argument.
+- The function should return a value if the element is not found.
+
+
 ##### 2.2.6. Code Structuring and Formatting
 
 - Code should be structured and formatted properly.
