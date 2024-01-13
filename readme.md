@@ -1,3 +1,6 @@
+<p align="center">
+<img width="1200" src=”https://github.com/GDSC-IAU/Selection-Project/blob/master/readme/banner.jpg” alt=”banner">
+</p>
 # Selection Project: Note Taking App
 
 ## Table of Contents
