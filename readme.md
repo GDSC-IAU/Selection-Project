@@ -82,6 +82,16 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco install flutter
 ```
 
+- Run Flutter Doctor to check if Flutter is installed properly:
+
+```bash
+flutter doctor
+```
+
+![Alt text](/readme/image5.png)
+
+- If you have any red checks, follow the flutter doctor instructions to fix them. Or follow the below checklist.
+
 #### Windows: The following is a checklist of everything you need to have done before continuing with the project 👍🏽🫡
 
 - [ ] Flutter installed
@@ -128,6 +138,8 @@ flutter doctor
 ```
 
 ![Alt text](/readme/image5.png)
+
+- If you have any red checks, follow the flutter doctor instructions to fix them. Or follow the below checklist.
 
 #### MacOS: The following is a checklist of everything you need to have done before continuing with the project 👍🏽🫡
 
