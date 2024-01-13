@@ -92,7 +92,7 @@ choco install flutter
 - Run the following command to install Flutter:
 
 ```bash
-brew install flutter
+brew install flutter --cask
 ```
 
 ![Alt text](/readme/image4.png)
