@@ -177,7 +177,9 @@ git clone <repository-url>
   ```bash
   git status
   ```
+
   - The output should be similar to the following:
+  ![Alt text](/readme/image19.png)
 - Make the required changes.
 - Run the following command to add the changes:
 
