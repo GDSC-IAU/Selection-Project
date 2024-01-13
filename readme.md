@@ -154,11 +154,12 @@ flutter doctor
 ##### 2.1.1. Clone the repository
 
 - Open the terminal and navigate to the directory where you want to clone the repository.
-- Go to the repository page on your own account and click on the green code button.
+  - Make sure the path you choose has NO ARABIC LETTERS. This will cause errors.
+  ![Alt text](/readme/image17.png)
+- Go to the repository page on **your own account** and click on the green code button.
 - Copy the link under the clone section.
-- Run the following command to clone the repository:
-
 ![Image of github](/readme/image1.png)
+- Run the following command to clone the repository:
 
 ```bash
 git clone <repository-url>
@@ -169,6 +170,14 @@ git clone <repository-url>
 ##### 2.1.2. Add changes
 
 - Open the repository directory in VS Code.
+  - The path must be INSIDE the cloned repository.
+  ![Alt text](/readme/image18.png)
+  - To make sure, run the following command in the terminal:
+
+  ```bash
+  git status
+  ```
+  - The output should be similar to the following:
 - Make the required changes.
 - Run the following command to add the changes:
 
