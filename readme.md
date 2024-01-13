@@ -70,6 +70,16 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco install flutter
 ```
 
+- Make sure you have the following:
+  - Flutter installed
+  - Android Studio installed
+    - Go to the [android studio](https://developer.android.com/studio) website and download the latest version.
+  - Android SDK installed
+![Alt text](/readme/image13.png)
+![Alt text](/readme/image14.png)
+  - Visual Studio Desktop development with C++ installed
+  - Android emulator installed
+
 ##### 1.2.2. MacOS (Using Homebrew)
 
 - Open the terminal.
@@ -95,13 +105,32 @@ flutter doctor
 
 ![Alt text](/readme/image5.png)
 
-- if you see any errors, run the following command to install Xcode command line tools:
+- You must make sure you have the following:
+  - Flutter installed
+  - Android Studio installed
+    - Go to the [android studio](https://developer.android.com/studio) website and download the latest version.
+  - Xcode installed
+    - Go to the [app store](https://apps.apple.com/us/app/xcode/id497799835?mt=12) and download Xcode.
+  - Android SDK installed
+![Alt text](/readme/image13.png)
+![Alt text](/readme/image14.png)
+  - Xcode command line tools installed
 
-```bash
-xcode-select --install
-```
+  ```bash
+  sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
+  ```
 
-- Any other errors can be fixed by following the instructions provided by Flutter Doctor.
+  - iOS simulator installed
+
+  ```bash
+  xcodebuild -downloadPlatform iOS
+  ```
+
+  - xcode license accepted
+
+  ```bash
+  sudo xcodebuild -license
+
 
 #### 1.3. Install VS Code
 
