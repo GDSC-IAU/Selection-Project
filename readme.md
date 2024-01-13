@@ -58,6 +58,9 @@ By the end of this project, you should be able to:
 ##### 1.2.1. Windows (Using Chocolaty)
 
 - Open powershell as an administrator.
+
+  ![Alt text](/readme/image16.png)
+
 - Run the following command to install Chocolaty:
 
 ```bash
@@ -74,7 +77,7 @@ choco install flutter
   - Flutter installed
   - Android Studio installed
     - Go to the [android studio](https://developer.android.com/studio) website and download the latest version.
-  - Android SDK installed
+  - Android SDK installed (Steps shown below)
 ![Alt text](/readme/image13.png)
 ![Alt text](/readme/image14.png)
   - Visual Studio Desktop development with C++ installed
@@ -83,6 +86,7 @@ choco install flutter
 ##### 1.2.2. MacOS (Using Homebrew)
 
 - Open the terminal.
+![Alt text](/readme/image15.png)
 - Run the following command to install Homebrew:
 
 ```bash
