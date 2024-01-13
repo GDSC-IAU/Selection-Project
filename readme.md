@@ -1,8 +1,4 @@
-<p align="center">
-<img width="1200" src="https://github.com/GDSC-IAU/Selection-Project/blob/master/readme/banner.jpg" alt="Material Bread logo">
-</p>
-
-
+# ![Alt text](/readme/banner.jpg)
 
 ## Table of Contents
 
