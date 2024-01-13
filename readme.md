@@ -105,14 +105,6 @@ flutter doctor
     - Install Visual Studio from the following link: [Visual Studio](https://visualstudio.microsoft.com/downloads/)
     - Select Visual Studio Community Edition
     - When running the installer, make select the Desktop development with C++ Component
-- [ ] Android emulator installed
-  - Go to android studio and click on the AVD manager button.
-  ![Alt text](/readme/image23.png)
-  - Click on create virtual device.
-  ![Alt text](/readme/image24.png)
-  - Select the device you want to emulate and click next.
-  - Select the version of android you want to emulate and click next.
-  - Click on finish.
 
 ##### 1.2.2. MacOS (Using Homebrew)
 
