@@ -1,34 +1,10 @@
 // TODO: Add any utility functions here
 
+
 import 'dart:io';
+import '../models/note_model.dart';
 
-class TaskListApp {
-  int id;
-  String task_name;
-  String description;
-  bool isCompleted;
 
-  // Default constructor
-  TaskListApp()
-      : this.withDetails(
-            id: 0, task_name: '', description: '', isCompleted: false);
-
-  // Constructor with named parameters
-  TaskListApp.withDetails({
-    required this.id,
-    required this.task_name,
-    required this.description,
-    required this.isCompleted,
-  });
-
-  @override
-  String toString() {
-    String finished = isCompleted ? 'Yes' : 'No';
-    print("♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡");
-    return 'Task ID: $id \nTaskName: $task_name \nDescription: $description \nFinished: $finished';
-
-  }
-}
 
 extension IterableExtensions<T> on Iterable<T> {
   T? firstWhereOrNull(bool Function(T) test) {
@@ -40,7 +16,7 @@ extension IterableExtensions<T> on Iterable<T> {
   }
 }
 
-void addTask(List<TaskListApp> tasks) {
+void addTask(List<NoteModel> tasks) {
 
     print('What would you like your task name to be?');
     String? task_name;
@@ -70,7 +46,7 @@ void addTask(List<TaskListApp> tasks) {
     bool isCompleted = input == 'y' || input == 'yes';
     print("♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡");
 
-    TaskListApp task = TaskListApp.withDetails(
+    NoteModel task = NoteModel.withDetails(
       id: tasks.length + 1,
       task_name: task_name,
       description: description,
