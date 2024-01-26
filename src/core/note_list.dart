@@ -1,4 +1,5 @@
 import '../models/note.dart';
+import 'utils.dart';
 
 class NoteList {
   List<Note> notes = [];
@@ -10,9 +11,19 @@ class NoteList {
     notes.add(note);
   }
 
-  void editNote() {}
+  void editNoteTitle(int noteIndex) {
+    print("Old Title: " + notes[noteIndex].title);
+    notes[noteIndex].title = getStringInput("New Title: ");
+  }
 
-  void deleteNote() {}
+  void editNoteContent(int noteIndex) {
+    print("Previous Content: " + notes[noteIndex].content);
+    notes[noteIndex].content = getStringInput("Updated Content: ");
+  }
+
+  void deleteNote(int noteIndex) {
+    notes.removeAt(noteIndex);
+  }
 
   @override
   String toString() {

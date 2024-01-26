@@ -3,10 +3,12 @@ import 'dart:io';
 
 // returns a note index in the list
 // get from either a string search that searches note title and content, or from note ID in list
-int getNoteIndexFromInput(NoteList list, String prompt) {
+int getNoteIndexFromInput(NoteList list, String prompt,
+    {bool displayNote = true}) {
   while (true) {
     // Establish input
-    String input = getStringInput(prompt);
+    String input = getStringInput(prompt +
+        " (Search by typing the note's content or title, alternatively type the note's ID) ");
 
     try {
       // Try searching through integer ID by parsing input
@@ -18,6 +20,11 @@ int getNoteIndexFromInput(NoteList list, String prompt) {
       int index = inputInt - 1;
 
       if (checkNoteAtIndexExists(list, index)) {
+        if (displayNote) {
+          print("================");
+          print(list.notes[index].toString());
+          print("================");
+        }
         return index;
       }
     } catch (e) {
@@ -26,8 +33,15 @@ int getNoteIndexFromInput(NoteList list, String prompt) {
       // function returns -1 if note does not exist
       int index = getNoteIndexFromStringSearch(list, input);
 
-      if (index != -1) // note found
+      if (index != -1) {
+        // note found
+        if (displayNote) {
+          print("================");
+          print(list.notes[index].toString());
+          print("================");
+        }
         return index;
+      }
     }
   }
 }
@@ -38,7 +52,7 @@ bool checkNoteAtIndexExists(NoteList list, int index) {
     list.notes[index]; // check for the exception
     return true;
   } catch (e) {
-    print("Note with ID $index does not exist.");
+    print("Note with ID ${index + 1} does not exist.");
     return false;
   }
 }
