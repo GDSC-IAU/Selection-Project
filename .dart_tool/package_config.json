@@ -1,0 +1,20 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "dolumns",
+      "rootUri": "file:///C:/Users/ferha/AppData/Local/Pub/Cache/hosted/pub.dev/dolumns-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "Selection_Project",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    }
+  ],
+  "generated": "2024-01-23T02:14:06.212918Z",
+  "generator": "pub",
+  "generatorVersion": "3.2.4"
+}
