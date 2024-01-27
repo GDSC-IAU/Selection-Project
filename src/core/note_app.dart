@@ -1,15 +1,19 @@
 // here is all the logic and sequence  of event for the app
 import 'dart:io';
+import '../models/note_model.dart';
 import 'utils.dart';
 
-class options1 {
+class NoteApp {
   // TODO: Complete the run function
   void run() {
     //print the menu of the note app
     printMenu();
 
+    NoteList noteList = NoteList();
     while (true) {
+      NoteModel myNote = NoteModel(); //most crated here becose.....
       // catch errors of entering anything but numbers for options
+
       bool choiceValid = false;
       int choice = -1;
       while (!choiceValid) {
@@ -18,7 +22,7 @@ class options1 {
           choice = int.parse(stdin.readLineSync()!);
           choiceValid = true;
         } catch (e) {
-          print("the value most be a number less then or equal to 5: ");
+          print("the value most be a number less then or equal to 6: ");
         }
       }
       //switch statement for the options
@@ -28,27 +32,28 @@ class options1 {
           noteList.addNote(myNote);
           break;
         case 2:
-          // taskList.edit();
+          noteList.edit();
           break;
         case 3:
           noteList.displayNote();
           break;
         case 4:
-          //taskList.delete();
+          noteList.delete();
+          break;
+        case 5:
+          //noteList.search();
+          print("searching...");
           break;
 
-        case 5:
+        case 6:
           exit(0);
 
         default:
-          print("the value most be a number less then or equal to 5:");
+          print("the value most be a number less then or equal to 6:");
           break;
       }
       // call display function to display all notes
       displayAllNotes(noteList.noteList);
-
-      //call options for the user
-      options();
     }
   }
 }
