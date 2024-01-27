@@ -96,7 +96,7 @@ class NoteApp {
         case 5:
           print('Exit');
           print("♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡");
-
+          exit(1);
           break;
 
         default:
