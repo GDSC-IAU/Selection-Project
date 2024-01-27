@@ -53,7 +53,16 @@ class NoteApp {
 
           if (taskToEdit != null) {
             print('What would you like your new task name to be?');
-            taskToEdit.task_name = stdin.readLineSync()!;
+            String name = stdin.readLineSync()!;
+
+            if(name.isEmpty)
+            {
+                print("Task name cannot be empty");
+                break;
+            }
+            taskToEdit.task_name = name;
+
+
 
             print('Enter the new task description:');
             taskToEdit.description = stdin.readLineSync()!;
