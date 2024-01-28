@@ -44,7 +44,6 @@ editing notes
 
 
 searching and deleting notes 
-displaying note contents
 <img src="readme/search and delete note demo (2).gif"  alt="add note demo">
 
 
