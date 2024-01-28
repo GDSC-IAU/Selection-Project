@@ -49,7 +49,7 @@ displaying note contents
 editing notes
 
 
-<img src="readme/edit note demo.gif" style="max-width: 100px; max-height: 100px;" alt="add note demo">
+<img src="readme/edit note demo.gif" style="max-width: 80px; max-height: 80px;" alt="add note demo">
 
 
 
