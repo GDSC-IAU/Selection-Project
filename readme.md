@@ -29,17 +29,35 @@
 ## Demo
 
 Creating notes
+
+
 <img src="readme/add note demo.gif" alt="add note demo">
 
 
 
+
+
 displaying note contents
+
+
 <img src="readme/display note demo.gif"  alt="add note demo">
 
 
 
+
+
 editing notes
+
+
 <img src="readme/edit note demo.gif"  alt="add note demo">
+
+
+
+
+searching and deleting notes 
+
+
+<img src="readme/search and delete note demo (2).gif"  alt="add note demo">
 
 
 
