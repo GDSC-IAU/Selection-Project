@@ -6,9 +6,9 @@ class NoteModel {
 
   NoteModel({this.name, this.content});
 
-//   String? Create (String name , String content){
+  String? Create (String name , String content){
   
-//   return name+content;
-// }
+  return name+content;
+}
 
   }

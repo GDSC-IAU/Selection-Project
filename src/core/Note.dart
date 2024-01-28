@@ -18,13 +18,18 @@ class Note {
     this.Content=Content;
    }
 
-  static List<Note> Notes =[];
-
+ static  List<Note> NotesList =[];
+// Note NotesList=[];
     static void CreateNote(Note newNote){
-      Notes.add(newNote);
+      NotesList.add(newNote);
       print("Note added sucessfuly");
       
     }
+
+    static String? deleteNoteM(String? delNoteV){
+
+    }
+
    }
 
 
