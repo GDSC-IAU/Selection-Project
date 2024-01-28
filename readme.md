@@ -31,7 +31,7 @@
 Creating notes
 
 
-<img src="readme/add note demo.gif" style="max-width: 100px; max-height: 100px;" alt="add note demo">
+<img src="readme/add note demo.gif" style="max-width: 80px; max-height: 80px;" alt="add note demo">
 
 
 
@@ -40,7 +40,7 @@ Creating notes
 displaying note contents
 
 
-<img src="readme/display note demo.gif" style="max-width: 100px; max-height: 100px;" alt="add note demo">
+<img src="readme/display note demo.gif" style="max-width: 80px; max-height: 80px;" alt="add note demo">
 
 
 
@@ -57,4 +57,4 @@ editing notes
 searching and deleting notes 
 
 
-<img src="readme/search and delete note demo (2).gif" style="max-width: 100px; max-height: 100px;" alt="add note demo">
+<img src="readme/search and delete note demo (2).gif" style="max-width: 80px; max-height: 80px;" alt="add note demo">
