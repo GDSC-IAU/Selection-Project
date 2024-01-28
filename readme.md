@@ -29,23 +29,23 @@
 ## Demo
 
 Creating notes
-<img src="readme/add note demo.gif" width="400" height="300" alt="add note demo">
+<img src="readme/add note demo.gif" width="100" alt="add note demo">
 
 
 
 displaying note contents
-<img src="readme/display note demo.gif" width="400" height="300" alt="add note demo">
+<img src="readme/display note demo.gif" width="100" alt="add note demo">
 
 
 
 editing notes
-<img src="readme/edit note demo.gif" width="400" height="300" alt="add note demo">
+<img src="readme/edit note demo.gif" width="100" alt="add note demo">
 
 
 
 searching and deleting notes 
 displaying note contents
-<img src="readme/search and delete note demo (2).gif" width="400" height="300" alt="add note demo">
+<img src="readme/search and delete note demo (2).gif" width="100" alt="add note demo">
 
 
 
