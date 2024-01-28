@@ -4,15 +4,13 @@ import '../models/note_model.dart';
 import 'utils.dart';
 
 class NoteApp {
-  // TODO: Complete the run function
   void run() {
     //print the menu of the note app
     printMenu();
 
     NoteList noteList = NoteList();
     while (true) {
-      NoteModel myNote = NoteModel(); //most crated here becose.....
-      // catch errors of entering anything but numbers for options
+      NoteModel myNote = NoteModel();
 
       bool choiceValid = false;
       int choice = -1;

@@ -1,11 +1,3 @@
-// TODO: Add any utility functions here
-
-/*but first
-crating the list which will hold the values of title content and id note
-but first the function that will display a table with the id and title of the note
-maybe make a method to handle null errors an use it across all the functions
-*/
-
 import 'dart:io';
 import 'package:dolumns/dolumns.dart';
 import '../models/note_model.dart';
@@ -61,7 +53,6 @@ class NoteList {
       print(errorMassage("Title can't be empty."));
     }
 
-    //add null checking here=> just handle that in the readMultilineContent()=>done
     stdout.write(enter("Enter note content (Enter 'q' to quit):\n"));
     myNote.content = readMultilineContent();
     //add note to the list
@@ -92,7 +83,7 @@ class NoteList {
         orElse: () => NoteModel());
   }
 
-  //fix: the note title is not updating=>done
+  //edit notes
   void edit() {
     int? noteId;
     NoteModel foundNote;
@@ -149,13 +140,11 @@ class NoteList {
   void search() {
     stdout.write(enter("Enter search query: "));
     String? query = stdin.readLineSync();
-    // String lowerCaseNoteContent = myNote.content
     if (query != null && query.isNotEmpty) {
       List<NoteModel> matchingNote = noteList
           .where((note) =>
               (note.title?.toLowerCase().contains(query.toLowerCase()) ==
                   true) ||
-              //fix: can't use toLowerCase on stringBuffer
               (note.content?.toLowerCase().contains(query.toLowerCase()) ==
                   true))
           .toList();
@@ -175,8 +164,7 @@ class NoteList {
   }
 }
 
-/*add null checking here for the content => don't know why not working=> it dose work but
-when the user adds lines by pressing enter it considers the content to be not empty*/
+//function to read multiple line using a stringBuffer variable
 String? readMultilineContent() {
   StringBuffer buffer = StringBuffer();
   String? line;
@@ -187,7 +175,7 @@ String? readMultilineContent() {
       break;
     }
     buffer.write(line);
-    buffer.write('\n'); //don't remove this
+    buffer.write('\n');
   }
   if (buffer.isNotEmpty) {
     return buffer.toString();
