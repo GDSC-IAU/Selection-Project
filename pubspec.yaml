@@ -1,0 +1,17 @@
+name: Selection_Project
+description: A sample Dart project
+version:
+
+dependencies:
+  ansicolor: ^2.0.2
+  dolumns: ^2.0.1
+
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+
+
+
+dev_dependencies:
+
