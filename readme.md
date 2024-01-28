@@ -29,17 +29,23 @@
 ## Demo
 
 Creating notes
-<iframe width="560" height="315" src="readme/add note demo.mp4" frameborder="0" allowfullscreen></iframe>
+<img src="readme/add note demo.gif" width="400" height="300" alt="add note demo">
 
-editing notes
-<iframe width="560" height="315" src="readme/edit note demo.mp4" frameborder="0" allowfullscreen></iframe>
+
 
 displaying note contents
-<iframe width="560" height="315" src="readme/display note demo.mp4" frameborder="0" allowfullscreen></iframe>
+<img src="readme/display note demo.gif" width="400" height="300" alt="add note demo">
+
+
+
+editing notes
+<img src="readme/edit note demo.gif" width="400" height="300" alt="add note demo">
+
+
 
 searching and deleting notes 
-<iframe width="560" height="315" src="readme/search and delete note demo.mp4" frameborder="0" allowfullscreen></iframe>
-
+displaying note contents
+<img src="readme/search and delete note demo (2).gif" width="400" height="300" alt="add note demo">
 
 
 
