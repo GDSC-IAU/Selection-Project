@@ -18,17 +18,17 @@ class NoteApp {
       int choice = -1;
       while (!choiceValid) {
         try {
-          stdout.write("Enter a number: ");
+          stdout.write(enter("Enter a number: "));
           choice = int.parse(stdin.readLineSync()!);
           choiceValid = true;
         } catch (e) {
-          print("the value most be a number less then or equal to 6: ");
+          print(errorMassage(
+              "the value most be a number less then or equal to 6"));
         }
       }
       //switch statement for the options
       switch (choice) {
         case 1:
-          // call add note function
           noteList.addNote(myNote);
           break;
         case 2:
@@ -41,15 +41,15 @@ class NoteApp {
           noteList.delete();
           break;
         case 5:
-          //noteList.search();
-          print("searching...");
+          noteList.search();
           break;
 
         case 6:
           exit(0);
 
         default:
-          print("the value most be a number less then or equal to 6:");
+          print(errorMassage(
+              "the value most be a number less then or equal to 6:"));
           break;
       }
       // call display function to display all notes

@@ -9,10 +9,22 @@ maybe make a method to handle null errors an use it across all the functions
 import 'dart:io';
 import 'package:dolumns/dolumns.dart';
 import '../models/note_model.dart';
+import 'package:ansicolor/ansicolor.dart';
+
+//for the header menu
+AnsiPen menu = AnsiPen()..cyan(bold: true);
+//for anytime the user have to enter something
+AnsiPen enter = AnsiPen()..green();
+//for the content in display
+AnsiPen content = AnsiPen()..blue();
+//for the are you sure to delate prompt
+AnsiPen deleteColor = AnsiPen()..yellow();
+//for error messages
+AnsiPen errorMassage = AnsiPen()..red();
 
 //print the menu
 void printMenu() {
-  print('<<welcome to cli note app>>');
+  print(menu('\n<<welcome to cli note app>>\n'));
   final columns = dolumnify([
     ['id', 'note title'],
     ['', ' '],
@@ -35,52 +47,43 @@ class NoteList {
   List<NoteModel> noteList = [];
   int id = 1;
 
+  //adding notes
   void addNote(NoteModel myNote) {
     myNote.id = id;
     id++;
-    //add null checking here
-    stdout.write("Enter note title: ");
-    myNote.title = stdin.readLineSync();
-    //add null checking here
-    stdout.write("Enter note content (Enter 'q' to quit):\n");
+    while (true) {
+      stdout.write(enter("Enter note title: "));
+      myNote.title = stdin.readLineSync();
+
+      if (myNote.title != null && myNote.title!.isNotEmpty) {
+        break;
+      }
+      print(errorMassage("Title can't be empty."));
+    }
+
+    //add null checking here=> just handle that in the readMultilineContent()=>done
+    stdout.write(enter("Enter note content (Enter 'q' to quit):\n"));
     myNote.content = readMultilineContent();
     //add note to the list
     noteList.add(myNote);
   }
 
-  StringBuffer? readMultilineContent() {
-    StringBuffer buffer = StringBuffer();
-
-    while (true) {
-      String line = stdin.readLineSync() ?? '';
-
-      if (line.trim().toLowerCase() == 'q') {
-        break;
-      }
-      buffer.write(line);
-      buffer.write('\n'); //removing this will massup the display
-    }
-
-    return buffer;
-  }
-
-//needs to use getNoteId
+  //display note contents
   void displayNote() {
-    //choice a note id
-    //needs null checking here
-    stdout.write("Enter note id to display the note content: ");
-    int noteId = int.parse(stdin.readLineSync()!);
-    //look for the note id in the list
-    NoteModel foundNote = findNoteById(noteId);
+    int? noteId;
+    NoteModel foundNote;
+    while (true) {
+      noteId = getNoteId(enter("Enter note id to display the note content: "));
+      foundNote = findNoteById(noteId!);
 
-    if (foundNote.id != -1) {
-      // print the note content
-      print("________________________");
-      print("Note Content:\n ${foundNote.content}");
-    } else if (foundNote == Null) {
-      print("note id can't be empty");
-    } else {
-      print("not a valid id");
+      if (foundNote.id != -1) {
+        // print the note content
+        print("________________________");
+        print(content("Note Content:\n ${foundNote.content}"));
+        break;
+      } else {
+        print(errorMassage("not a valid id"));
+      }
     }
   }
 
@@ -89,31 +92,109 @@ class NoteList {
         orElse: () => NoteModel());
   }
 
-//!!!!complete the edit function to have the user chose to edit the note title or the content!!!
+  //fix: the note title is not updating=>done
   void edit() {
-    //needs null checking
-    //choice a note id to edit
-    stdout.write("Enter note id to edit note");
-    int noteId = int.parse(stdin.readLineSync()!);
-    NoteModel foundNote = findNoteById(noteId);
-    if (foundNote.id != -1) {
-      //ask wather the user want to edit the title or the content of the note
-      // if the user wants to edit the title use noteList.title = stdin.readlinesync();
-      //if the user wants to edit the content show the content in write mode then save
-    } else {
-      print("not a valid id");
+    int? noteId;
+    NoteModel foundNote;
+
+    while (true) {
+      noteId = getNoteId(enter("Enter note id to edit note: "));
+      foundNote = findNoteById(noteId!);
+      if (foundNote.id != -1) {
+        while (true) {
+          stdout.write(enter("Enter new note title: "));
+          String? newTitle = stdin.readLineSync();
+          foundNote.title = newTitle;
+          if (newTitle != null && newTitle.isNotEmpty) {
+            break;
+          }
+
+          // Handle Empty
+          print(errorMassage("title can't be empty."));
+        }
+        stdout.write(enter("Enter new note content: "));
+        foundNote.content = readMultilineContent();
+        break;
+      } else {
+        print("not a valid id");
+      }
     }
   }
 
+  //delete method
   void delete() {
-    int? noteId = getNoteId("Enter note id to delete note: ");
-    NoteModel foundNote = findNoteById(noteId!); //why added !
-    if (foundNote.id != -1) {
-      noteList.remove(foundNote);
-    } else {
-      print("not a valid id"); // i think there is no need for this line of code
+    int? noteId;
+    NoteModel foundNote;
+    while (true) {
+      noteId = getNoteId(enter("Enter note id to delete note: "));
+      foundNote = findNoteById(noteId!);
+      if (foundNote.id != -1) {
+        stdout.write(deleteColor(
+            "are you sure you want to delete note with ID: ${noteId}? y/n: "));
+        String? sure = stdin.readLineSync();
+        if (sure != null && sure.toLowerCase() == "y") {
+          noteList.remove(foundNote);
+          break;
+        } else if (sure == "n") {
+          print("user canceled delete note with iD: ${noteId}");
+          break;
+        } else {
+          print(errorMassage("Please enter y/n"));
+        }
+      }
     }
   }
+
+  //search method
+  void search() {
+    stdout.write(enter("Enter search query: "));
+    String? query = stdin.readLineSync();
+    // String lowerCaseNoteContent = myNote.content
+    if (query != null && query.isNotEmpty) {
+      List<NoteModel> matchingNote = noteList
+          .where((note) =>
+              (note.title?.toLowerCase().contains(query.toLowerCase()) ==
+                  true) ||
+              //fix: can't use toLowerCase on stringBuffer
+              (note.content?.toLowerCase().contains(query.toLowerCase()) ==
+                  true))
+          .toList();
+      if (matchingNote.isNotEmpty) {
+        print("________________________");
+        print(content("Matching Notes: \n"));
+        for (var note in matchingNote) {
+          print(content("ID: ${note.id}, Note Title: ${note.title}"));
+          print(content("${note.content}"));
+        }
+      } else {
+        print("No matching notes found.");
+      }
+    } else {
+      print(errorMassage("search can't be empty."));
+    }
+  }
+}
+
+/*add null checking here for the content => don't know why not working=> it dose work but
+when the user adds lines by pressing enter it considers the content to be not empty*/
+String? readMultilineContent() {
+  StringBuffer buffer = StringBuffer();
+  String? line;
+
+  while (true) {
+    line = stdin.readLineSync() ?? '';
+    if (line.trim().toLowerCase() == 'q') {
+      break;
+    }
+    buffer.write(line);
+    buffer.write('\n'); //don't remove this
+  }
+  if (buffer.isNotEmpty) {
+    return buffer.toString();
+  } else {
+    print(errorMassage("Content can't be empty."));
+  }
+  return null;
 }
 
 void displayAllNotes(List<NoteModel> noteList) {
@@ -127,7 +208,7 @@ void displayAllNotes(List<NoteModel> noteList) {
   ], columnSplitter: ' | ', headerIncluded: true, headerSeparator: '=');
 
   print("________________________");
-  print("All Notes:");
+  print(menu("All Notes:-\n"));
   print(columns);
   options();
 }
@@ -143,7 +224,7 @@ int? getNoteId(String message) {
         return int.parse(input);
       }
     } catch (e) {
-      print("Invalid input, Please enter a valid integer.");
+      print(errorMassage("Invalid id, Please enter a valid integer."));
     }
   }
 }

@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "ansicolor",
+      "rootUri": "file:///C:/Users/ferha/AppData/Local/Pub/Cache/hosted/pub.dev/ansicolor-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "dolumns",
       "rootUri": "file:///C:/Users/ferha/AppData/Local/Pub/Cache/hosted/pub.dev/dolumns-2.0.1",
       "packageUri": "lib/",
@@ -14,7 +20,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2024-01-23T02:14:06.212918Z",
+  "generated": "2024-01-27T23:59:13.435385Z",
   "generator": "pub",
   "generatorVersion": "3.2.4"
 }
