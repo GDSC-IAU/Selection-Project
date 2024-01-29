@@ -110,7 +110,7 @@ void deleteNote(){
       var foundNote = notes.notes.firstWhere((note) => note.id == byID, orElse: () => NoteModel(id: -1, title: "", theNote: ""));
       if (foundNote.id != -1) {
         notes.deleteNoteById(foundNote.id);
-        print("Note with ID found \"${foundNote.id}\" deleted successfully.");
+        print("Note with ID \"${foundNote.id}\" found deleted successfully.");
       } else {
         print("Note not found");
       }
@@ -121,7 +121,7 @@ void deleteNote(){
       var foundNote = notes.notes.firstWhere((note) => note.title == byTitle, orElse: () => NoteModel(id: -1, title: "", theNote: ""));
       if (foundNote.title != "") {
         notes.deleteNoteByTitle(foundNote.title);
-        print("Note with Title found \"${foundNote.title}\" deleted successfully.");
+        print("Note with Title \"${foundNote.title}\" found deleted successfully.");
       } else {
         print("Note not found");
       }
