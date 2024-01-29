@@ -52,19 +52,53 @@ void addNote(){
   if(theNote == null || theNote.trim().isEmpty){
     print("note cannot be empty");
     return;
-  }
+    }
   notes.addNote(title, theNote);
-}
+  }
 void viewNotes() {
     print(notes.toString());
   }
 
 void editNote(){
-
-}
+  print("Choice note you want to edit");
+  print("Do you want to Search by ID/title 1/2: ");
+  String? input = stdin.readLineSync();
+  int searchBy = int.parse(input!);
+  switch(searchBy){
+    case 1:
+      print("enter ID: ");
+      String? input = stdin.readLineSync();
+      int byID = int.parse(input!);
+      var foundNote = notes.notes.firstWhere((note) => note.id == byID, orElse: () => NoteModel(id: -1, title: "", theNote: ""));
+      if (foundNote.id != -1) {
+        print("Note found. Enter your edit: ");
+        String? input = stdin.readLineSync();
+        foundNote.updateNote(input!);
+      } else {
+        print("Note not found");
+      }
+      break;
+    case 2:
+      print("enter title: ");
+      String? byTitle = stdin.readLineSync();
+      var foundNote = notes.notes.firstWhere((note) => note.title == byTitle, orElse: () => NoteModel(id: -1, title: "", theNote: ""));
+      if (foundNote.title != "") {
+        print("Note found: ");
+        print("Note found. Enter your edit: ");
+        String? input = stdin.readLineSync();
+        foundNote.updateNote(input!);
+      } else {
+        print("Note not found");
+      }
+      break;
+    default:
+      print("Invalid choive");
+      break;
+    }
+  }
 
 void searchNote(){
-  print("Do you want to Search by ID/title 1/2:");
+  print("Do you want to Search by ID/title 1/2: ");
   String? input = stdin.readLineSync();
   int searchBy = int.parse(input!);
   switch(searchBy){
@@ -83,7 +117,7 @@ void searchNote(){
       }
       break;
     case 2:
-      print("enter title:");
+      print("enter title: ");
       String? byTitle = stdin.readLineSync();
       var foundNote = notes.notes.firstWhere((note) => note.title == byTitle, orElse: () => NoteModel(id: -1, title: "", theNote: ""));
       if (foundNote.title != "") {
@@ -98,8 +132,5 @@ void searchNote(){
     default:
       print("Invalid choive");
       break;
-    
-    
+    }
   }
-
-}

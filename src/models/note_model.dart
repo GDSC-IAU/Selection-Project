@@ -9,6 +9,11 @@ class NoteModel {
         required this.title,
         required this.theNote
     });
+
+  void updateNote(String newTheNote) {
+    theNote = newTheNote;
+    return;
+  }
 }
 class NoteList{
   List<NoteModel> _notes = [];
@@ -22,7 +27,7 @@ class NoteList{
       theNote: theNote,
     ));
   }
-  
+
 
   @override
   String toString(){
