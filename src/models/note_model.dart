@@ -28,6 +28,13 @@ class NoteList{
     ));
   }
 
+  void deleteNoteById(int id) {
+    _notes.removeWhere((note) => note.id == id);
+  }
+
+  void deleteNoteByTitle(String title) {
+    _notes.removeWhere((note) => note.title == title);
+  }
 
   @override
   String toString(){

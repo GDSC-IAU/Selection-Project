@@ -25,6 +25,7 @@ void handleChoice(int choice){
       editNote();
       break;
     case 3:
+      deleteNote();
       break;
     case 4:
       viewNotes();
@@ -83,7 +84,6 @@ void editNote(){
       String? byTitle = stdin.readLineSync();
       var foundNote = notes.notes.firstWhere((note) => note.title == byTitle, orElse: () => NoteModel(id: -1, title: "", theNote: ""));
       if (foundNote.title != "") {
-        print("Note found: ");
         print("Note found. Enter your edit: ");
         String? input = stdin.readLineSync();
         foundNote.updateNote(input!);
@@ -94,8 +94,43 @@ void editNote(){
     default:
       print("Invalid choive");
       break;
-    }
   }
+}
+
+void deleteNote(){
+    print("Choice note you want to delete");
+  print("Do you want to Search by ID/title 1/2: ");
+  String? input = stdin.readLineSync();
+  int searchBy = int.parse(input!);
+  switch(searchBy){
+    case 1:
+      print("enter ID: ");
+      String? input = stdin.readLineSync();
+      int byID = int.parse(input!);
+      var foundNote = notes.notes.firstWhere((note) => note.id == byID, orElse: () => NoteModel(id: -1, title: "", theNote: ""));
+      if (foundNote.id != -1) {
+        notes.deleteNoteById(foundNote.id);
+        print("Note with ID found \"${foundNote.id}\" deleted successfully.");
+      } else {
+        print("Note not found");
+      }
+      break;
+    case 2:
+      print("enter title: ");
+      String? byTitle = stdin.readLineSync();
+      var foundNote = notes.notes.firstWhere((note) => note.title == byTitle, orElse: () => NoteModel(id: -1, title: "", theNote: ""));
+      if (foundNote.title != "") {
+        notes.deleteNoteByTitle(foundNote.title);
+        print("Note with Title found \"${foundNote.title}\" deleted successfully.");
+      } else {
+        print("Note not found");
+      }
+      break;
+    default:
+      print("Invalid choive");
+      break;
+  }
+}
 
 void searchNote(){
   print("Do you want to Search by ID/title 1/2: ");

@@ -6,10 +6,7 @@ NoteList notes = NoteList();
 
 class NoteApp {
 
-
-  
   void run() {
-    //print('Hello, world!');
     int choice =0;
     while(choice != 6){
       printMenu();
