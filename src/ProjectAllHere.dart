@@ -1,28 +1,32 @@
-/*class NoteApp {
-  // TODO: Complete the run function
-  void run() {
-    print('Hello, world!');
-  }
-}*/
-
 import 'dart:io';
 
-import 'models/note_model.dart';
+// Represents a note in the NoteTakingApp.
+class Note {
+  // The content of the note.
+  String content;
 
-import 'utils.dart';
+  // Creates a new Note instance with the given content.
+  Note(this.content);
 
+  //null safety feature: Creates an empty Note instance.
+  factory Note.empty() {
+    return Note('');
+  }
+}
 
+// Represents a note-taking application.
 class NoteTakingApp {
   String _appTitle = "Note Taking App";
 
-  // Just frame for the title
+  //just frame for the title
   int frameLength = 40;
-
-  NoteTakingApp() {
-    //calling the method and print the title frame using the provided _appTitle and frameLength values.
-    printTitleFrame(_appTitle, frameLength);
+  NoteTakingApp(){
+    String leftFrame = '-' * (frameLength ~/ 2);
+    String rightFrame = '-' * (frameLength - (frameLength ~/ 2) - 1);
+    print('$leftFrame $_appTitle $rightFrame');
   }
 
+  
   late List<Note> _notes = [];
 
   // Displays the main menu of the NoteTakingApp.
@@ -34,7 +38,7 @@ class NoteTakingApp {
     print('5. View Notes');
     print('6. Exit');
   }
-
+  
   // Creates a new Note instance with the given content.
   void createNote() {
     print('\nEnter your Note:');
@@ -51,6 +55,7 @@ class NoteTakingApp {
     }
     print('----------------');
   }
+
 
   // Edits the Note at the given index.
   void editNote(int index) {
@@ -114,8 +119,12 @@ class NoteTakingApp {
     }
   }
 
+
+
   // Runs the NoteTakingApp.
   void run() {
+    //NoteTakingApp noteTakingApp = NoteTakingApp();
+
     int? choice;
 
     // Runs the NoteTakingApp until the user chooses to exit.
@@ -125,7 +134,7 @@ class NoteTakingApp {
       stdout.write('\nEnter your choice: ');
       try {
         // Parses the user input as an integer.
-        choice = int.parse(stdin.readLineSync()!);
+         choice = int.parse(stdin.readLineSync()!);
       } catch (e) {
         print('\nInvalid choice. Please enter a number. \n');
         choice = null;
@@ -133,58 +142,88 @@ class NoteTakingApp {
       }
 
       // Checks if the user input was successfully parsed as an integer.
-      if (choice != null) {
-        try {
-          // Handles user input and performs the corresponding action.
-          switch (choice) {
-            case 1:
-              print('----------------');
-              createNote();
-              break;
-            case 2:
-              print('----------------');
-              viewNotes();
-              print('----------------');
-              stdout.write('Enter the index of the note you want to edit: ');
-              int editIndex = int.parse(stdin.readLineSync()!);
-              print('----------------');
-              editNote(editIndex - 1);
-              break;
-            case 3:
-              print('----------------');
-              viewNotes();
-              print('----------------');
-              stdout.write('Enter the index of the note you want to delete: ');
-              int deleteIndex = int.parse(stdin.readLineSync()!);
-              print('----------------');
-              deleteNote(deleteIndex - 1);
-              break;
-            case 4:
-              print('----------------');
-              stdout.write('Enter the search term: ');
-              String searchTerm = stdin.readLineSync()!;
-              print('----------------');
-              searchNotes(searchTerm);
-              break;
-            case 5:
-              print('----------------');
-              viewNotes();
-              break;
-            case 6:
-              print('----------------');
-              print('Exiting...');
-              break;
-            default:
-              print('----------------');
-              print('Invalid choice. Please try again.');
-              break;
-          }
-        } catch (e) {
-          print('\nAn error occurred: $e');
-          print('----------------');
+    if(choice != null)  {
+      try {
+
+        // Handles user input and performs the corresponding action.
+        switch (choice) {
+          case 1:
+            print('----------------');
+            // Creates a new note with an empty content.
+            createNote();
+            break;
+
+          case 2:
+            if (_notes.isEmpty) {
+              print('\nNo notes found!');
+              print('----------------\n');
+            } else { 
+              print('----------------\n');
+              print('Enter the Index of the Note you Want to Edit: ');
+              try{
+                var index = int.parse(stdin.readLineSync()!) - 1;
+                // Edits the note at the given index.
+                editNote(index);
+              } catch (e) {
+                print('\nInvalid note index. Please try again.');
+                print('----------------');
+              }
+            }
+            break;
+
+          case 3:
+            if (_notes.isEmpty) {
+              print('\nNo notes found!');
+              print('----------------\n');
+            } else {
+              print('----------------\n');
+              print('Enter the Index of the Note you Want to Delete: ');
+              try {
+                var index = int.parse(stdin.readLineSync()!) - 1;
+                // Deletes the note at the given index.
+                deleteNote(index);
+              } catch (e) {
+                print('\nInvalid note index. Please try again.');
+                print('----------------');
+              }
+            }
+            break;
+
+          case 4:
+            print('----------------\n');
+            print('Enter the Note to Search for: ');
+            var searchTerm = stdin.readLineSync()!;
+            // Searches for notes containing the given search term.
+            searchNotes(searchTerm);
+            break;
+
+          case 5:
+            // Displays all notes.
+            viewNotes(); 
+            break;
+
+          case 6:
+            print('Exiting...');
+            exit(0);
+            break;
+
+          default:
+            print('Invalid choice. Please try again.');
+            print('----------------');
+            break;
         }
+      } catch (e) {
+        print('An error occurred: $e');
       }
     }
   }
+  }
 }
 
+
+ // The entry point of the NoteTakingApp program.
+void main() {
+  // Creates an instance of the NoteTakingApp class and runs it.
+  var noteTakingApp = NoteTakingApp();
+  noteTakingApp.run();
+}
