@@ -21,7 +21,7 @@ class NoteApp {
           handleChoice(choice);
           choiceValid = true;
         } catch (e) {
-          print("Please enter a number\n");
+          print(redColor + "Please enter a number\n" + resetColor);
         }
       }
       handleChoice;
