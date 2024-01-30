@@ -19,30 +19,37 @@ class NoteApp {
 
       String? newNoteTitle;
       String? newNoteContent;
-         Note newNote= Note(newNoteTitle,newNoteContent);
+         //Note newNote= Note(newNoteTitle,newNoteContent);
 
       print("Title: \n ****");
       newNoteTitle = stdin.readLineSync();
-      newNote.setTtile(newNoteTitle);
+     // newNote.setTtile(newNoteTitle);
 // setTtile && setContent  && CreateNote methods in Note class
       print ("content: \n ****");
       newNoteContent = stdin.readLineSync();
-      newNote.setContent(newNoteContent);
-
+    //  newNote.setContent(newNoteContent);
+Note newNote= Note(newNoteTitle,newNoteContent);
       Note.CreateNote(newNote);
       break;
       case 2:
-      //Edit a note
-
+      //print all notes
+    print("\nAll Notes:");
+  for (var note in Note.NotesList) {
+    print("Title: ${note.Title}");
+    print("Content: ${note.Content}");
+  
+    print("-----------");}
       case 3:
     //Delete a note
     String? delNoteV;
     int len;
     len= Note.NotesList.length;
-    print("Select a note to delete: ");
-    for (int i=0; i< len  ;i++){
-    print(Note.NotesList[i]);
-    }
+    // print("Select a note to delete: ");
+    // print(Note.NotesList);
+    // for (int i=0; i< len  ;i++){
+    // print(Note.NotesList[i]);
+    // }
+    print("Write the title of the note to delete: ");
     delNoteV= stdin.readLineSync();
     Note.deleteNoteM(delNoteV);
 
