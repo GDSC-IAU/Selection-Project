@@ -41,11 +41,15 @@ void handleChoice(int choice){
       break;
   }
 }
+
 void addNote(){
   stdout.write("ENTER NOTE TITLE: ");
   String? title = stdin.readLineSync();
   if (title == null || title.trim().isEmpty) {
     print("Title cannot be empty");
+    return;
+  } else if (notes.notes.any((note) => note.title == title)) {
+    print("Title cannot be repeated");
     return;
   }
   stdout.write("ENTER NOTE: ");
