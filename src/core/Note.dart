@@ -73,6 +73,81 @@ static  List<Note> NotesList =[];
 
     }
 
+    static void editTitleM(String? toEdit ,String? editNoteV){
+      // print("To edit the title press (1), Content press (2)");
+      // int editSwitch;
+      // swtitch (editSwitch){
+      //   1 :
+      // }
+        bool found=false;
+      for (int i =0; i<NotesList.length ;i++){
+        if (NotesList[i].Title== toEdit){
+          found =true;
+          NotesList[i].setTtile(editNoteV);
+          print("note was edited sucessfully");
+          break;
+        }
+          
+      }
+      if(!found){
+        print("note wasn't found");
+      }
+    }
+
+
+static void editContentM(String? toEdit ,String? editNoteV){
+      // print("To edit the title press (1), Content press (2)");
+      // int editSwitch;
+      // swtitch (editSwitch){
+      //   1 :
+      // }
+        bool found=false;
+      for (int i =0; i<NotesList.length ;i++){
+        if (NotesList[i].Title== toEdit){
+          found =true;
+          NotesList[i].setContent(editNoteV);
+          print("note was edited sucessfully");
+          break;
+        }
+          
+      }
+      if(!found){
+        print("note wasn't found");
+      }
+    }
+
+    static void searchByTitleM(String? title){
+       bool found=false;
+      for (int i =0; i<NotesList.length ;i++){
+        if (NotesList[i].Title== title){
+          found =true;
+          print("Note is found! \n ============ Content: ");
+          print(NotesList[i].Content);
+          break;
+        }
+          
+      }
+      if(!found){
+        print("note wasn't found");
+      }
+    }
+
+    static void searchByContentM(String? content){
+      bool found=false;
+      for (int i =0; i<NotesList.length ;i++){
+        if (NotesList[i].Title== content){
+          found =true;
+         print("Note is found! \n ============ Title: ");
+          print(NotesList[i].Title);
+          break;
+        }
+          
+      }
+      if(!found){
+        print("note wasn't found");
+      }
+    }
+
    }
 
 

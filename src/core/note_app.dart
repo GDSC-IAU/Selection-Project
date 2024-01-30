@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'Note.dart';
+ String? delNoteV, editNoteV, toEdit;
+ 
 class NoteApp {
   // TODO: Complete the run function
   void run() {
@@ -31,19 +33,36 @@ class NoteApp {
 Note newNote= Note(newNoteTitle,newNoteContent);
       Note.CreateNote(newNote);
       break;
-      case 2:
-      //print all notes
-    print("\nAll Notes:");
-  for (var note in Note.NotesList) {
-    print("Title: ${note.Title}");
-    print("Content: ${note.Content}");
-  
-    print("-----------");}
+      case 2: {
+
+  print("To edit the title press (1), Content press (2)");
+  try {
+      int editSwitch= int.parse(stdin.readLineSync()!);
+      switch (editSwitch) {
+        case 1 : print ("Enter the title of the note to edit: ") ;
+        toEdit=stdin.readLineSync();
+        print ("enter the new title: ");
+        editNoteV= stdin.readLineSync();
+        Note.editTitleM(toEdit,editNoteV);
+        break;
+
+        case 2: 
+        editNoteV= stdin.readLineSync();
+        Note.editContentM(toEdit,editNoteV);
+        break;
+
+        default:
+      }} catch(e){
+        print ("invalid input");
+      }}
+      break;
+  // editNoteV= stdin.readLineSync();
+  // Note.editNoteM(editNoteV);
       case 3:
     //Delete a note
-    String? delNoteV;
-    int len;
-    len= Note.NotesList.length;
+   
+    // int len;
+    // len= Note.NotesList.length;
     // print("Select a note to delete: ");
     // print(Note.NotesList);
     // for (int i=0; i< len  ;i++){
@@ -52,13 +71,42 @@ Note newNote= Note(newNoteTitle,newNoteContent);
     print("Write the title of the note to delete: ");
     delNoteV= stdin.readLineSync();
     Note.deleteNoteM(delNoteV);
-
+    case 4:
+   
+    print("\nAll Notes:");
+  for (var note in Note.NotesList) {
+    print("Title: ${note.Title}");
+    print("Content: ${note.Content}");
+  
+    print("-----------");}
 break;
-      case 4:
+      case 5:
     //searsh BY titile OR content
+
+    print("To search by title press (1) and to search by Content press (2)");
+  try {
+      int editSwitch= int.parse(stdin.readLineSync()!);
+      switch (editSwitch) {
+        case 1 : print ("Enter the title of the note: ") ;
+        toEdit=stdin.readLineSync();
+        Note.searchByTitleM(editNoteV);
+        break;
+
+        case 2: 
+         case 1 : print ("Enter the content of the note: ") ;
+        toEdit=stdin.readLineSync();
+        Note.searchByContentM(editNoteV);
+        break;
+
+        default:
+      }} catch(e){
+        print ("invalid input");
+      }
+      break;
   
 
       default:
+    
     }
    } while (operation!=5);
     
