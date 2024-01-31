@@ -12,12 +12,12 @@ class NoteList {
   }
 
   void editNoteTitle(int noteIndex) {
-    print("Old Title: " + notes[noteIndex].title);
+    print("\nOld Title: " + notes[noteIndex].title);
     notes[noteIndex].title = getStringInput("New Title: ");
   }
 
   void editNoteContent(int noteIndex) {
-    print("Previous Content: " + notes[noteIndex].content);
+    print("\nPrevious Content: " + notes[noteIndex].content);
     notes[noteIndex].content = getStringInput("Updated Content: ");
   }
 

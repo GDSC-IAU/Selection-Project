@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'note_list.dart';
 import 'utils.dart';
 
@@ -57,14 +55,14 @@ class NoteApp {
         return;
 
       default:
-        print("Please type a number between 1 and 6.");
+        print("Please type a number between 1 and 6.\n");
         parseMainMenu();
         break;
     }
   }
 
   void createNote() {
-    print("Create a note: ");
+    print("\nCreating Note...");
     String noteTitle = getStringInput("Note Title: ");
     String noteContent = getStringInput("Note: ");
     list.addNote(noteTitle, noteContent);
@@ -84,8 +82,10 @@ class NoteApp {
   }
 
   void editNote(int noteIndex) {
-    int editChoice = getNumberInput(
-        "Press '1' to edit the note's title, and '2' to edit the content: ");
+    print("1. Edit note's title");
+    print("2. Edit note's content");
+    print("3. Cancel");
+    int editChoice = getNumberInput("What would you like to do? ");
 
     switch (editChoice) {
       case 1:
@@ -94,8 +94,10 @@ class NoteApp {
       case 2:
         list.editNoteContent(noteIndex);
         break;
+      case 3:
+        return;
       default:
-        print("Please type either '1' or '2'");
+        print("Please type either '1', '2', or '3'\n");
         editNote(noteIndex);
         break;
     }
@@ -109,7 +111,7 @@ class NoteApp {
     }
 
     int index =
-        getNoteIndexFromInput(list, "Which note would you like to delete?");
+        getNoteIndexFromInput(list, "\nWhich note would you like to delete?");
 
     deleteNote(index);
   }
@@ -117,7 +119,7 @@ class NoteApp {
   void deleteNote(int noteIndex) {
     if (getYesOrNoInput("Are you sure you want to delete this note?")) {
       list.deleteNote(noteIndex);
-      getStringInput("Note deleted. Press anything to continue.",
+      getStringInput("\nNote deleted. Press anything to continue.",
           nullable: true);
     }
   }
@@ -138,6 +140,7 @@ class NoteApp {
 
   void parseSearchScreen(int noteIndex) {
     int input = getNumberInput("What would you like to do? (Type a number) ");
+    print(""); // line break
     switch (input) {
       case 1:
         editNote(noteIndex);
@@ -151,7 +154,7 @@ class NoteApp {
       case 4:
         return;
       default:
-        print("Please type a number between 1 and 4.");
+        print("Please type a number between 1 and 4.\n");
         parseSearchScreen(noteIndex);
         break;
     }

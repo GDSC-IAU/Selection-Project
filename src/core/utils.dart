@@ -21,9 +21,9 @@ int getNoteIndexFromInput(NoteList list, String prompt,
 
       if (checkNoteAtIndexExists(list, index)) {
         if (displayNote) {
-          print("================");
+          print("\n================");
           print(list.notes[index].toString());
-          print("================");
+          print("================\n");
         }
         return index;
       }
@@ -36,9 +36,9 @@ int getNoteIndexFromInput(NoteList list, String prompt,
       if (index != -1) {
         // note found
         if (displayNote) {
-          print("================");
+          print("\n================");
           print(list.notes[index].toString());
-          print("================");
+          print("================\n");
         }
         return index;
       }
@@ -52,7 +52,7 @@ bool checkNoteAtIndexExists(NoteList list, int index) {
     list.notes[index]; // check for the exception
     return true;
   } catch (e) {
-    print("Note with ID ${index + 1} does not exist.");
+    print("Note with ID ${index + 1} does not exist.\n");
     return false;
   }
 }
@@ -71,7 +71,7 @@ int getNoteIndexFromStringSearch(NoteList list, String input) {
       element.title.toLowerCase().contains(adjustedInput));
 
   // The indexWhere() function returns -1 if the elements are not found / don't exist
-  if (index == -1) print("Note with search criterion '$input' not found");
+  if (index == -1) print("Note with search criterion '$input' not found\n");
   return index;
 }
 
@@ -90,7 +90,7 @@ String getStringInput(String prompt, {bool nullable = false}) {
       if (!input.isEmpty)
         validInput = true;
       else
-        print("Cannot have empty input!");
+        print("Cannot have empty input!\n");
     }
   }
 
@@ -131,7 +131,7 @@ int getNumberInput(String prompt) {
       input = int.parse(stdin.readLineSync()!);
       validInput = true;
     } catch (e) {
-      print("Please type a valid number.");
+      print("Please type a valid number.\n");
     }
   }
 
