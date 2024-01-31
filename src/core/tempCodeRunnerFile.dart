@@ -1,1 +1,0 @@
-print(Note.NotesList[i]);
