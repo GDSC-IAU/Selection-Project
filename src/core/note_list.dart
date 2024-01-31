@@ -32,7 +32,10 @@ class NoteList {
       // There are notes
       for (int i = 0; i < notes.length; i++) {
         string += "================\n";
-        if (showIDs) string += "${i + 1}\n"; // Print IDs if they're enabled
+
+        if (showIDs)
+          string += "Note ID: ${i + 1}\n"; // Print IDs if they're enabled
+
         string += "${notes[i].toString()}\n";
       }
       string += "================\n";

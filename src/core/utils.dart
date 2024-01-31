@@ -19,6 +19,8 @@ int getNoteIndexFromInput(NoteList list, String prompt,
       // Menu displays indices incremented by 1, so we compensate by subtracting 1 from input to get index
       int index = inputInt - 1;
 
+      // If the specified index in the note list exists, we return that index
+      // If it doesn't exist, we just re-iterate the loop
       if (checkNoteAtIndexExists(list, index)) {
         if (displayNote) {
           print("\n================");
@@ -33,8 +35,9 @@ int getNoteIndexFromInput(NoteList list, String prompt,
       // function returns -1 if note does not exist
       int index = getNoteIndexFromStringSearch(list, input);
 
+      // If index equals -1, it means it does not exist. In this case we re-iterate the loop
       if (index != -1) {
-        // note found
+        // index does not equal -1, so the note exists
         if (displayNote) {
           print("\n================");
           print(list.notes[index].toString());
@@ -62,7 +65,7 @@ bool checkNoteAtIndexExists(NoteList list, int index) {
 // returns -1 if nothing is found
 int getNoteIndexFromStringSearch(NoteList list, String input) {
   // Adjust input to lowercase
-  // we do this to make the contains() function case insensitive by also making the string compared lowercase
+  // we do this to make the contains() function case-insensitive by also making the string compared lowercase
   String adjustedInput = input.toLowerCase();
 
   // Check through list to find case where title or content (both lowercase) contains the adjusted input
@@ -94,7 +97,6 @@ String getStringInput(String prompt, {bool nullable = false}) {
     }
   }
 
-  //print(""); // line break
   return input;
 }
 
