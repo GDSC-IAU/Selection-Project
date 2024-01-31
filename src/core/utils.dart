@@ -73,7 +73,7 @@ void viewNotes() {
 
 void editNote(){
   print("Choose note you want to edit.");
-  print("Do you want to choose by" + blueColor + " ID/title 1/2" + resetColor + ": ");
+  print("Do you want to choose by" + blueColor + " ID/title (1/2)" + resetColor + ": ");
   String? input = stdin.readLineSync();
   int searchBy = int.parse(input!);
   switch(searchBy){
@@ -111,8 +111,8 @@ void editNote(){
 }
 
 void deleteNote(){
-    print("Choose note you want to delete.");
-  print("Do you want to choose by" + blueColor + " ID/title 1/2" + resetColor + ": ");
+  print("Choose note you want to delete.");
+  print("Do you want to choose by" + blueColor + " ID/title (1/2)" + resetColor + ": ");
   String? input = stdin.readLineSync();
   int searchBy = int.parse(input!);
   switch(searchBy){
@@ -146,7 +146,7 @@ void deleteNote(){
 }
 
 void searchNote(){
-  print("Do you want to Search by" + blueColor + " ID/title 1/2" + resetColor + ": ");
+  print("Do you want to Search by" + blueColor + " ID/title (1/2)" + resetColor + ": ");
   String? input = stdin.readLineSync();
   int searchBy = int.parse(input!);
   switch(searchBy){
