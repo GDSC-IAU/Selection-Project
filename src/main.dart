@@ -18,16 +18,16 @@ class NoteManager{
 //Creates a new note and adds it to the list of notes.
  void createNote(){
   String title,content;
-  print("Enter the note title: \n");
+  print("Enter the note title: ");
   title=stdin.readLineSync() ?? "None";
 
-  print("Enter the note content: \n");
+  print("Enter the note content: ");
   content=stdin.readLineSync() ?? "None";
 
   Note newNote=Note(title:title,content:content);
   notes.add(newNote);
 
-  print("The note is successfully created! ");  
+  print("The note is successfully created!");  
   }
 
   //Display all notes of the list. 
@@ -65,23 +65,30 @@ class NoteManager{
 
       }
     }
-    print("Note with title '$newTitle' not found ");  
+    print("Note with title '$newTitle' not found\n ");  
   }
   
   //Delete specific note of the list.
-  void DeleteNote(){
-     if (notes.isEmpty) {
-      print("Nothing to delete!");
-      return;
-    }
-
-    print("Enter the title of the note to delete:");
-    var deleteTitle = stdin.readLineSync() ?? "None";
-
-    notes.removeWhere((note) => note.title == deleteTitle);
-
-    print("Note deleted: $deleteTitle");
+ void DeleteNote() {
+  if (notes.isEmpty) {
+    print("Nothing to delete!");
+    return;
   }
+
+  print("Enter the title of the note to delete:");
+  var noteToDeleteTitle = stdin.readLineSync();
+
+  // Find the note index with the specified title.
+  var noteIndexToDelete = notes.indexWhere((note) => note.title == noteToDeleteTitle);
+
+  if (noteIndexToDelete == -1) {
+    print("Note with title '$noteToDeleteTitle' not found!");
+  } else {
+    var deletedNote = notes.removeAt(noteIndexToDelete);
+    print("Note deleted: ${deletedNote.title}");
+  }
+}
+
 
   //Search about specific note by title or content of note.
   void SearchNote() {
@@ -116,18 +123,20 @@ class NoteManager{
 void main(List<String> args) {
   //NoteApp().run();
   NoteManager UserMenu= new NoteManager();
-  print("**************Welcome to Noteapp**************");
+  
   
 
   do{
 
            try{ 
             //Menu of note
-            print("                1.Create a note");
+            print("**************Welcome to Noteapp**************");
+            print("1.Create a note");
             print("2.Edit a note");
             print("3.Delete a note");
             print("4.Search for a note");
-            print("5.Exit\n");
+            print("5.Display all");
+            print("6.Exit\n");
             stdout.write("Enter your choice: ");
             String userInput = stdin.readLineSync() ?? "None";
             int choice = int.parse(userInput);
@@ -150,14 +159,20 @@ void main(List<String> args) {
                     break;
 
                     case 5:
+                    UserMenu.DisplayNote();
+                    break;
+
+                    case 6:
                     print("Exitng the program.\n");
                     return;
+                    
                 default:
-                print("Invalid number please choose 1 to 5 only!\n");
+                print("Invalid number please choose 1 to 6 only!\n");
                     break;
                     
             }
            } on FormatException //catch for MissMatch Exception
+           //catch for unexpected Exception(if input string)
            catch (e) {
            print("An unexpected error occurred: $e\n");
            }
