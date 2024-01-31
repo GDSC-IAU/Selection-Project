@@ -1,19 +1,14 @@
 import 'note_app.dart';
 class Note {
-  // setTtile && setContent  && 
-  //CreateNote methods in Note class
+  
    String? Title, Content;
 
    
    
-   Note(String? Title, String? Complete){
-    this.Title=Title;
-    this.Content=Content;
+   Note(String? title, String? content){
+    this.Title= title;
+    this.Content=content;
    }
-
-   //var TitleListContent =[Note("hello","world dmdm"),];
-  //  var map= Map.fromIterable(TitleListContent, key: (item) => Note.Title, value: (item) => Note.Content);
-
 
 
    void setTtile(String? Title){
@@ -33,23 +28,9 @@ class Note {
    }
 
 static  List<Note> NotesList =[];
-//  static List<Map<String?,Note>> NotesList = [
-//   {"Title" : Note.Title,
-//   "Content" : Note.Content} ,
-//  ];
-// Note NotesList=[];
-
- ///////// // List<Map<String?, dynamic>> NotesList = [
-  // { "Title" : "Note 1 ", "Content": "helllllooo" } , ];
 
     static void CreateNote(Note newNote){
-      // NotesList.add(newNote);
-      // print("Note added sucessfuly");
-    
-//   List<Map<Note.Title,Note.Content>> NotesList = [
-//   {"Title" : Note.Title,
-//   "Content" : Note.Content} ,
-//  ];
+      
  NotesList.add(newNote);
       print("Note added sucessfuly");
       
@@ -58,7 +39,7 @@ static  List<Note> NotesList =[];
     static void deleteNoteM(String? delNoteV){
       bool found=false;
       for (int i =0; i<NotesList.length ;i++){
-       //Note result= NotesList.firstWhere((element) => element.Title == deleteNoteM , orElse: () => null   );
+       
         if (NotesList[i].Title== delNoteV){
           found =true;
           NotesList.removeAt(i);
@@ -74,11 +55,7 @@ static  List<Note> NotesList =[];
     }
 
     static void editTitleM(String? toEdit ,String? editNoteV){
-      // print("To edit the title press (1), Content press (2)");
-      // int editSwitch;
-      // swtitch (editSwitch){
-      //   1 :
-      // }
+      
         bool found=false;
       for (int i =0; i<NotesList.length ;i++){
         if (NotesList[i].Title== toEdit){
@@ -96,11 +73,7 @@ static  List<Note> NotesList =[];
 
 
 static void editContentM(String? toEdit ,String? editNoteV){
-      // print("To edit the title press (1), Content press (2)");
-      // int editSwitch;
-      // swtitch (editSwitch){
-      //   1 :
-      // }
+      
         bool found=false;
       for (int i =0; i<NotesList.length ;i++){
         if (NotesList[i].Title== toEdit){
@@ -121,7 +94,7 @@ static void editContentM(String? toEdit ,String? editNoteV){
       for (int i =0; i<NotesList.length ;i++){
         if (NotesList[i].Title== title){
           found =true;
-          print("Note is found! \n ============ Content: ");
+          print("Note is found! \n =============== \n Content: \n ===============");
           print(NotesList[i].Content);
           break;
         }
@@ -135,9 +108,9 @@ static void editContentM(String? toEdit ,String? editNoteV){
     static void searchByContentM(String? content){
       bool found=false;
       for (int i =0; i<NotesList.length ;i++){
-        if (NotesList[i].Title== content){
+        if (NotesList[i].Content== content){
           found =true;
-         print("Note is found! \n ============ Title: ");
+         print("Note is found! \n ============ \n Title: ");
           print(NotesList[i].Title);
           break;
         }
